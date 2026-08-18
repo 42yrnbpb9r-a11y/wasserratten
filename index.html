@@ -353,6 +353,115 @@ h3{font-size:1.28rem;font-weight:600;letter-spacing:-.01em}
   max-width:1180px;margin-left:auto;margin-right:auto;
 }
 
+
+/* ---------- Stimmen ---------- */
+.stimmen{padding:clamp(64px,8vw,110px) var(--rand);background:#fff;border-top:1px solid var(--fuge)}
+.stimmen-inner{max-width:1180px;margin:0 auto}
+.karten{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}
+.stimme{
+  border:1px solid var(--fuge);border-radius:4px 4px 18px 18px;padding:24px 22px;
+  display:flex;flex-direction:column;gap:18px;background:var(--fliese);
+}
+.stimme blockquote{
+  font-family:var(--display);font-weight:600;font-size:1.08rem;line-height:1.35;
+  letter-spacing:-.01em;flex:1;
+}
+.stimme blockquote::before{content:"„"}
+.stimme blockquote::after{content:"“"}
+.stimme figcaption{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;color:var(--tiefe)}
+.stimme figcaption span{display:block;color:#7b8f94;margin-top:4px;font-size:.68rem}
+.bewerten{
+  margin-top:26px;padding:22px;border:1.5px dashed var(--wasser);border-radius:4px;
+  display:flex;gap:22px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+}
+.bewerten b{font-family:var(--display);font-size:1.05rem}
+.bewerten p{font-size:.92rem;color:#3a4d52;max-width:48ch;margin-top:4px}
+.pruefhinweis{
+  margin-top:18px;font-family:var(--mono);font-size:.68rem;line-height:1.7;
+  color:#6b7f84;max-width:78ch;
+}
+
+/* ---------- Formular-Ergaenzungen ---------- */
+.pflichtbox{
+  background:#FFF8EC;border-left:3px solid var(--seepferdchen);
+  padding:14px 16px;font-size:.92rem;color:#4a3a1e;margin-bottom:22px;
+}
+.pflichtbox b{display:block;margin-bottom:3px}
+.req{
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;
+  color:#A2472F;background:#FDECE8;padding:2px 6px;border-radius:3px;margin-left:8px;
+  vertical-align:middle;
+}
+.zustimmung.pflicht{padding:12px 14px;background:var(--fliese);border-radius:4px}
+.kaestchen{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:9px}
+.kaestchen label{display:flex;gap:9px;align-items:center;font-size:.92rem;cursor:pointer}
+.kaestchen input{width:17px;height:17px;accent-color:var(--wasser);flex:0 0 auto}
+
+.aufsicht{border:1.5px solid var(--tiefe);border-radius:4px;padding:16px;margin:14px 0}
+.aufsicht ul{margin:0 0 0 18px;font-size:.9rem;color:#3a4d52;display:grid;gap:6px}
+.aufsicht .platzhalter{
+  font-family:var(--mono);font-size:.66rem;color:#A2472F;margin-top:12px;
+}
+
+.zusammen{background:var(--fliese);border-radius:4px;padding:6px 16px}
+.zusammen .paar{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--fuge);font-size:.93rem}
+.zusammen .paar:last-child{border-bottom:0}
+.zusammen .paar span{color:#6b7f84}
+.zusammen .paar b{font-weight:500;text-align:right}
+
+.karten-wahl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.wahl{position:relative;cursor:pointer;display:block}
+.wahl input{position:absolute;opacity:0;pointer-events:none}
+.wahl span{
+  display:block;border:1.5px solid var(--fuge);border-radius:4px;padding:14px;
+  background:#fff;transition:border-color .15s ease,background .15s ease;
+}
+.wahl input:checked + span{border-color:var(--wasser);background:#F0FAF8;box-shadow:inset 0 0 0 1px var(--wasser)}
+.wahl input:focus-visible + span{outline:3px solid var(--wasser);outline-offset:2px}
+.wahl b{display:block;font-family:var(--display);font-size:1rem;font-weight:600}
+.wahl i{display:block;font-style:normal;font-family:var(--mono);font-size:1rem;color:var(--tiefe);margin-top:5px}
+.wahl em{display:block;font-style:normal;font-size:.76rem;color:#7b8f94;margin-top:3px}
+.zahlwahl{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:9px}
+.wahl.klein span{padding:11px 13px;text-align:center}
+.wahl.klein b{font-family:var(--mono);font-size:.8rem;font-weight:500}
+
+.anhaenge{display:grid;gap:6px;font-family:var(--mono);font-size:.72rem;color:#4d6268}
+.mitbringen{
+  margin:20px auto 0;max-width:460px;text-align:left;background:#FFF8EC;
+  border-left:3px solid var(--seepferdchen);padding:13px 15px;font-size:.88rem;color:#4a3a1e;
+}
+
+.wlhinweis{
+  display:none;margin-top:10px;background:#EAF4FB;border-left:3px solid #2E7BA6;
+  padding:12px 14px;font-size:.88rem;color:#1d3f52;
+}
+.wlhinweis.an{display:block}
+.reservierung{
+  display:flex;gap:14px;align-items:flex-start;
+  background:#F0FAF8;border:1.5px solid var(--wasser);border-radius:4px;
+  padding:14px 16px;margin-bottom:22px;
+}
+.reservierung b{font-family:var(--display);font-size:1rem;display:block}
+.reservierung p{font-size:.9rem;color:#3a4d52;margin-top:3px}
+#restzeit{font-family:var(--mono);font-weight:500;color:var(--tiefe)}
+.puls{
+  width:10px;height:10px;border-radius:50%;background:var(--wasser);
+  margin-top:7px;flex:0 0 auto;animation:pulsieren 1.8s ease-in-out infinite;
+}
+@keyframes pulsieren{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.75)}}
+.reservierung.knapp{background:#FFF8EC;border-color:var(--seepferdchen)}
+.reservierung.knapp .puls{background:var(--seepferdchen)}
+.abgelaufen{
+  display:none;background:#FDF1EE;border-left:3px solid #A2472F;
+  padding:18px 20px;color:#5c2317;
+}
+.abgelaufen b{font-family:var(--display);font-size:1.05rem;display:block;margin-bottom:5px}
+.abgelaufen p{font-size:.92rem}
+.step.erloschen .zusammen,.step.erloschen .feld,
+.step.erloschen .formfuss,.step.erloschen .hilfe,
+.step.erloschen .reservierung{display:none}
+.step.erloschen .abgelaufen{display:block}
+
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}
@@ -368,6 +477,7 @@ h3{font-size:1.28rem;font-weight:600;letter-spacing:-.01em}
   <a class="navlink" href="#bahn">Kurse</a>
   <a class="navlink" href="#warum">Warum Schwimmen</a>
   <a class="navlink" href="#ueber">Über mich</a>
+  <a class="navlink" href="#stimmen">Stimmen</a>
   <a class="btn" href="#anmeldung">Platz anfragen</a>
 </nav>
 
@@ -386,7 +496,7 @@ h3{font-size:1.28rem;font-weight:600;letter-spacing:-.01em}
       <div class="beleg"><b>Ausbildung</b><p>DSV-zertifizierte Schwimmausbilderin, DLRG-Ausbilderin Schwimmen, Rettungsschwimmer-Assistentin</p></div>
       <div class="beleg"><b>Abzeichen</b><p>Berechtigt zur Abnahme aller deutschen Schwimmabzeichen sowie des Junior-Retters</p></div>
       <div class="beleg"><b>Pädagogik</b><p>Diplom-Logopädin (NL), diplomierte Lerntherapeutin, Qualifikation Psychomotorik, ADS-Coach</p></div>
-      <div class="beleg"><b>Bedingungen</b><p>Kein Abo, keine Mindeststundenzahl. Jedes Kind bekommt die Zeit, die es braucht</p></div>
+      <div class="beleg"><b>Bedingungen</b><p>Kein Abo, keine Mindeststundenzahl. Stunden werden online im Voraus gekauft und nur bei Teilnahme verbraucht</p></div>
     </div>
   </div>
 </header>
@@ -546,18 +656,50 @@ h3{font-size:1.28rem;font-weight:600;letter-spacing:-.01em}
   </div>
 </section>
 
+<!-- ============ Stimmen ============ -->
+<section class="stimmen" id="stimmen">
+  <div class="stimmen-inner">
+    <div class="eyebrow">Stimmen von Eltern</div>
+    <h2 style="margin:14px 0 18px;max-width:24ch">Was Eltern nach dem Abzeichen sagen</h2>
+
+    <div class="karten">
+      <figure class="stimme">
+        <blockquote>Meine Tochter hatte Angst vor dem Sprung. Nach drei Monaten ist sie freiwillig vom Beckenrand gesprungen – und niemand hat sie gedrängt.</blockquote>
+        <figcaption>Mutter von L., 8 Jahre<span>Bronze · Frühjahr 2026</span></figcaption>
+      </figure>
+      <figure class="stimme">
+        <blockquote>Was uns überzeugt hat: Das Abzeichen kam erst, als es wirklich saß. In der Schule hatte er es vorher fast geschenkt bekommen.</blockquote>
+        <figcaption>Vater von T., 10 Jahre<span>Silber &amp; Gold · 2026</span></figcaption>
+      </figure>
+      <figure class="stimme">
+        <blockquote>Sie erklärt vor jeder Stunde, was heute dran ist, und danach in einem Satz, wie es gelaufen ist. Das kennt man von kaum einem Kurs.</blockquote>
+        <figcaption>Mutter von M., 7 Jahre<span>Nach dem Seepferdchen · 2026</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="bewerten">
+      <div>
+        <b>Sie waren mit Ihrem Kind bei mir?</b>
+        <p>Dann finden Sie in Ihrer Bestätigungsmail einen persönlichen Link zum Bewertungsformular. Sie können auch ohne Namen schreiben.</p>
+      </div>
+      <a class="btn ghost" href="#">Bewertung schreiben</a>
+    </div>
+    <p class="pruefhinweis">So prüfe ich Bewertungen: Schreiben kann nur, wessen Kind tatsächlich in einer meiner Gruppen angemeldet war – der Link dazu ist an die Anmeldung gebunden. Ich veröffentliche die Texte unverändert und lösche keine Kritik.</p>
+  </div>
+</section>
+
 <!-- ============ Anmeldung ============ -->
 <section class="anmeldung" id="anmeldung">
   <div class="formkarte">
     <div class="formkopf">
       <div class="eyebrow" style="color:var(--kaustik)">Platz anfragen</div>
       <h2 id="formTitel">Anmeldung</h2>
-      <p id="formSub">Drei kurze Schritte. Sie erhalten anschließend eine E-Mail zur Bestätigung.</p>
-      <div class="schritte"><div class="aktiv"></div><div></div><div></div></div>
+      <p id="formSub">Fünf Schritte. Der Platz ist mit der Zahlung sofort sicher.</p>
+      <div class="schritte"><div class="aktiv"></div><div></div><div></div><div></div><div></div></div>
     </div>
 
     <div class="formkoerper">
-      <!-- Schritt 1 -->
+      <!-- 1 Kind -->
       <div class="step aktiv" data-step="1">
         <div class="feld">
           <label for="kurs">Gewünschte Gruppe</label>
@@ -567,6 +709,9 @@ h3{font-size:1.28rem;font-weight:600;letter-spacing:-.01em}
             <option>Silber &amp; Gold · Mi 17:15 – 18:00 · 4 Plätze frei</option>
             <option>Seepferdchen – Beratung zum Einstieg</option>
           </select>
+          <div class="wlhinweis" id="wlHinweis">
+            <b>Diese Gruppe ist voll.</b> Ihre Anmeldung geht auf die Warteliste – dafür wird nichts bezahlt. Sobald ein Platz frei wird, erhalten Sie einen persönlichen Link und haben 48 Stunden Zeit.
+          </div>
         </div>
         <div class="zwei">
           <div class="feld"><label for="vn">Vorname des Kindes</label><input type="text" id="vn" placeholder="Mia"></div>
@@ -584,16 +729,61 @@ h3{font-size:1.28rem;font-weight:600;letter-spacing:-.01em}
           <textarea id="stand" rows="3" placeholder="Schwimmt 25 m Brust, taucht ungern, springt nicht vom Beckenrand"></textarea>
           <div class="hilfe">Hilft mir, die Gruppe richtig zu wählen. Ein Satz genügt.</div>
         </div>
-        <div class="feld">
-          <label for="med">Wichtige Hinweise zur Gesundheit</label>
-          <textarea id="med" rows="2" placeholder="Optional – z. B. Asthma, Hörgerät, Epilepsie"></textarea>
-          <div class="hilfe">Freiwillig. Ich brauche das nur, um im Wasser sicher reagieren zu können. Diese Angabe wird verschlüsselt gespeichert und nach Kursende gelöscht.</div>
-        </div>
-        <div class="formfuss"><span></span><button class="btn" data-weiter>Weiter zu den Kontaktdaten</button></div>
+        <div class="formfuss"><span></span><button class="btn" data-weiter>Weiter zum Gesundheitsbogen</button></div>
       </div>
 
-      <!-- Schritt 2 -->
+      <!-- 2 Gesundheit -->
       <div class="step" data-step="2">
+        <div class="pflichtbox">
+          <b>Diese Angaben sind Pflicht.</b>
+          Ich unterrichte im Wasser und muss im Notfall in Sekunden richtig reagieren können. Ohne diese Angaben kann ich Ihr Kind nicht aufnehmen.
+        </div>
+
+        <div class="zustimmung pflicht"><input type="checkbox" id="arzt"><label for="arzt">Meinem Kind ist das Schwimmen ärztlich erlaubt; es liegen keine mir unbekannten Einschränkungen vor.<span class="req">Pflicht</span></label></div>
+
+        <div class="feld" style="margin-top:22px">
+          <label>Liegt eines der folgenden Themen vor?</label>
+          <div class="kaestchen">
+            <label><input type="checkbox"> Asthma</label>
+            <label><input type="checkbox"> Anfallsleiden / Epilepsie</label>
+            <label><input type="checkbox"> Herz oder Kreislauf</label>
+            <label><input type="checkbox"> Diabetes</label>
+            <label><input type="checkbox"> Paukenröhrchen / Trommelfell</label>
+            <label><input type="checkbox"> Hörgerät oder CI</label>
+            <label><input type="checkbox"> Brille oder Kontaktlinsen</label>
+            <label><input type="checkbox"> Allergien</label>
+            <label><input type="checkbox"> Neurodermitis / Haut</label>
+            <label><input type="checkbox"> Motorische Einschränkung</label>
+            <label><input type="checkbox"> Wahrnehmung, AD(H)S, Autismus</label>
+            <label><input type="checkbox" checked> Nichts davon</label>
+          </div>
+          <div class="hilfe">Nur ankreuzen, was zutrifft. Ich frage im Gespräch nach, wenn ich mehr wissen muss.</div>
+        </div>
+
+        <div class="feld">
+          <label for="medi">Medikamente, die im Bad dabei sein müssen</label>
+          <input type="text" id="medi" placeholder="z. B. Notfallspray, muss in der Umkleide bleiben">
+        </div>
+
+        <div class="feld">
+          <label for="notfall">Was muss ich im Notfall wissen?<span class="req">Pflicht</span></label>
+          <textarea id="notfall" rows="3" placeholder="Anfälle treten selten und nur bei Fieber auf. Bei Atemnot Spray in der Tasche am Beckenrand."></textarea>
+        </div>
+
+        <div class="zwei">
+          <div class="feld"><label for="nkname">Notfallkontakt während der Stunde<span class="req">Pflicht</span></label><input type="text" id="nkname" placeholder="Sabine Beispiel, Mutter"></div>
+          <div class="feld"><label for="nktel">Telefon, erreichbar Mi 16–18 Uhr<span class="req">Pflicht</span></label><input type="tel" id="nktel" placeholder="0170 1234567"></div>
+        </div>
+
+        <div class="hilfe" style="background:var(--fliese);padding:13px 15px;border-radius:4px;border-left:3px solid var(--wasser)">
+          Diese Angaben werden verschlüsselt gespeichert, ausschließlich für die Sicherheit im Wasser genutzt und nach dem Ende der Teilnahme gelöscht. Sie erhalten den ausgefüllten Bogen als PDF zum Unterschreiben.
+        </div>
+
+        <div class="formfuss"><button class="btn ghost" data-zurueck>Zurück</button><button class="btn" data-weiter>Weiter zu den Kontaktdaten</button></div>
+      </div>
+
+      <!-- 3 Kontakt -->
+      <div class="step" data-step="3">
         <div class="feld"><label for="eltern">Name des Erziehungsberechtigten</label><input type="text" id="eltern" placeholder="Sabine Beispiel"></div>
         <div class="zwei">
           <div class="feld"><label for="mail">E-Mail</label><input type="email" id="mail" placeholder="sabine@example.de"></div>
@@ -604,34 +794,104 @@ h3{font-size:1.28rem;font-weight:600;letter-spacing:-.01em}
           <div class="feld"><label for="plz">PLZ</label><input type="text" id="plz"></div>
           <div class="feld"><label for="ort">Ort</label><input type="text" id="ort"></div>
         </div>
-        <div class="zahlhinweis"><strong>Zur Bezahlung:</strong> Es gibt kein Abo und keine Mindeststundenzahl. Sie erhalten eine Rechnung; alternativ zahlen Sie vor Ort in Bar. Online-Zahlung ist nicht nötig.</div>
         <div class="formfuss"><button class="btn ghost" data-zurueck>Zurück</button><button class="btn" data-weiter>Weiter zu den Einwilligungen</button></div>
       </div>
 
-      <!-- Schritt 3 -->
-      <div class="step" data-step="3">
-        <div class="zustimmung"><input type="checkbox" id="agb"><label for="agb">Ich habe die Teilnahmebedingungen und die Absageregeln gelesen und akzeptiere sie.</label></div>
-        <div class="zustimmung"><input type="checkbox" id="ds"><label for="ds">Ich habe die Datenschutzhinweise gelesen.</label></div>
+      <!-- 4 Einwilligungen -->
+      <div class="step" data-step="4">
+        <div class="zustimmung pflicht"><input type="checkbox" id="agb"><label for="agb">Ich habe die Teilnahmebedingungen und die Absageregeln gelesen und akzeptiere sie.<span class="req">Pflicht</span></label></div>
+
+        <div class="aufsicht">
+          <div class="zustimmung pflicht" style="margin-bottom:10px"><input type="checkbox" id="aufsicht"><label for="aufsicht"><b>Ich habe die Regelung zur Aufsichtspflicht gelesen und akzeptiere sie.</b><span class="req">Pflicht</span></label></div>
+          <ul>
+            <li>Die Aufsicht beginnt, wenn ich das Kind am Beckenrand übernehme, und endet dort wieder.</li>
+            <li>Für Weg, Umkleide und Duschen sind die Erziehungsberechtigten verantwortlich.</li>
+            <li>Das Kind wird pünktlich gebracht und direkt nach der Stunde abgeholt.</li>
+            <li>Ich muss während der Stunde telefonisch erreichbar sein.</li>
+          </ul>
+          <p class="platzhalter">Verbindlicher Volltext folgt – bitte anwaltlich prüfen lassen.</p>
+        </div>
+
+        <div class="zustimmung pflicht"><input type="checkbox" id="ds"><label for="ds">Ich willige ausdrücklich ein, dass die Gesundheitsangaben meines Kindes zum Zweck der Sicherheit im Wasser verarbeitet werden, und habe die Datenschutzhinweise gelesen.<span class="req">Pflicht</span></label></div>
         <div class="zustimmung"><input type="checkbox" id="foto"><label for="foto">Mein Kind darf fotografiert werden, Bilder dürfen auf dieser Website erscheinen.<span class="opt">Freiwillig · jederzeit widerrufbar</span></label></div>
         <div class="zustimmung"><input type="checkbox" id="info"><label for="info">Ich möchte über freie Plätze und Termine informiert werden.<span class="opt">Freiwillig</span></label></div>
-        <div class="hilfe" style="margin-top:18px">Nach dem Absenden ist der Platz noch nicht verbindlich – erst der Klick in der Bestätigungsmail sichert ihn. Ohne Bestätigung wird der Platz nach 48 Stunden wieder freigegeben.</div>
-        <div class="formfuss"><button class="btn ghost" data-zurueck>Zurück</button><button class="btn" id="absenden">Anfrage absenden</button></div>
+
+        <div class="formfuss"><button class="btn ghost" data-zurueck>Zurück</button><button class="btn" data-weiter>Weiter zur Zahlung</button></div>
       </div>
 
-      <!-- Bestätigung -->
-      <div class="step" data-step="4">
+      <!-- 5 Zahlung -->
+      <div class="step" data-step="5">
+        <div class="reservierung" id="resBox">
+          <span class="puls" aria-hidden="true"></span>
+          <div>
+            <b>Ihr Platz ist reserviert</b>
+            <p>Wir halten ihn <span id="restzeit">15:00</span> für Sie frei. Solange kann niemand anders diesen Platz kaufen.</p>
+          </div>
+        </div>
+
+        <div class="abgelaufen" id="resWeg">
+          <b>Die Reservierung ist abgelaufen.</b>
+          <p>Der Platz ist wieder freigegeben. Es wurde nichts abgebucht.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+            <button class="btn" id="neuVersuch">Erneut versuchen</button>
+            <button class="btn ghost">Auf die Warteliste</button>
+          </div>
+        </div>
+
+        <div class="zusammen">
+          <div class="paar"><span>Kind</span><b>Mia Beispiel, 7 Jahre</b></div>
+          <div class="paar"><span>Gruppe</span><b>Nach dem Seepferdchen · Mi 16:00</b></div>
+          <div class="paar"><span>Erste Stunde</span><b>Mi, 19.08.2026</b></div>
+        </div>
+
+        <div class="feld" style="margin-top:22px">
+          <label>Stundenkarte wählen</label>
+          <div class="karten-wahl">
+            <label class="wahl"><input type="radio" name="karte" checked><span><b>5 Stunden</b><i>65,00 €</i><em>13,00 € je Stunde</em></span></label>
+            <label class="wahl"><input type="radio" name="karte"><span><b>10 Stunden</b><i>120,00 €</i><em>12,00 € je Stunde</em></span></label>
+            <label class="wahl"><input type="radio" name="karte"><span><b>Einzelstunde</b><i>15,00 €</i><em>zum Ausprobieren</em></span></label>
+          </div>
+          <div class="hilfe">Kein Abo, keine Kündigung. Sie kaufen Stunden im Voraus, jede besuchte Stunde wird abgebucht. Entfallene Termine kosten nichts. Preise im Klickdummy sind Beispielwerte.</div>
+        </div>
+
+        <div class="feld">
+          <label>Zahlungsart</label>
+          <div class="hilfe" style="margin:0 0 9px">Nur Verfahren, die sofort bestätigt werden – nur so kann der Platz unmittelbar verbindlich sein.</div>
+          <div class="zahlwahl">
+            <label class="wahl klein"><input type="radio" name="zahl" checked><span><b>PayPal</b></span></label>
+            <label class="wahl klein"><input type="radio" name="zahl"><span><b>Karte</b></span></label>
+            <label class="wahl klein"><input type="radio" name="zahl"><span><b>Apple / Google Pay</b></span></label>
+            <label class="wahl klein"><input type="radio" name="zahl"><span><b>iDEAL</b></span></label>
+            <label class="wahl klein"><input type="radio" name="zahl"><span><b>Bancontact</b></span></label>
+          </div>
+        </div>
+
+        <div class="hilfe" style="background:var(--fliese);padding:13px 15px;border-radius:4px;border-left:3px solid var(--seepferdchen)">
+          Der Platz ist mit der Zahlung sofort verbindlich reserviert – es gibt keine Wartezeit auf eine Bestätigungsmail und keine Rechnung.
+        </div>
+
+        <div class="formfuss"><button class="btn ghost" data-zurueck>Zurück</button><button class="btn" id="absenden">65,00 € zahlen und Platz sichern</button></div>
+      </div>
+
+      <!-- 6 Fertig -->
+      <div class="step" data-step="6">
         <div class="fertig">
           <div class="haken">✓</div>
-          <h3>Fast fertig</h3>
-          <p>Ich habe Ihre Anfrage erhalten. Bitte bestätigen Sie sie über den Link in der E-Mail – danach ist der Platz für Ihr Kind reserviert.</p>
+          <h3>Platz gesichert</h3>
+          <p>Die Zahlung ist eingegangen, Mias Platz in der Gruppe Mi 16:00 ist reserviert. Erste Stunde: Mittwoch, 19. August, 16:00 Uhr.</p>
           <div class="mailmock">
             <div class="von">Von: post@die-wasserratten.de · An: sabine@example.de</div>
             <div class="txt">
-              <b>Bitte bestätigen: Platz für Mia, Mi 16:00</b>
-              <p style="color:#3a4d52">Ein Klick, und der Platz ist sicher. Danach bekommen Sie alle Termine als Kalenderdatei, die Adresse des Bades und die Rechnung.</p>
-              <p style="margin-top:12px"><span class="btn" style="pointer-events:none">Platz bestätigen</span></p>
+              <b>Willkommen – Mias Platz ist sicher</b>
+              <p style="color:#3a4d52">In dieser Mail: alle Termine als Kalenderdatei, die Adresse des Bades, Ihr Zahlungsbeleg und Ihr persönlicher Link, über den Sie Stunden nachkaufen, sich abmelden oder Ihre Daten ändern können.</p>
+              <p style="margin-top:12px" class="anhaenge">
+                <span>📎 Gesundheitsbogen &amp; Aufsichtsregelung.pdf</span>
+                <span>📎 Termine.ics</span>
+                <span>📎 Beleg.pdf</span>
+              </p>
             </div>
           </div>
+          <p class="mitbringen"><b>Bitte zur ersten Stunde mitbringen:</b> den ausgefüllten Gesundheitsbogen mit Unterschrift. Bis er vorliegt, kann Ihr Kind nicht ins Wasser.</p>
         </div>
       </div>
     </div>
@@ -663,7 +923,7 @@ h3{font-size:1.28rem;font-weight:600;letter-spacing:-.01em}
       </ul>
     </div>
   </div>
-  <p class="offen">Noch offen für den Livegang: Impressumsangaben, Datenschutzerklärung, Teilnahme- und Absagebedingungen, Preise je Stunde, Adresse des Bades pro Gruppe, Fotos mit Einwilligung.</p>
+  <p class="offen">Noch offen für den Livegang: Impressumsangaben, Datenschutzerklärung, Teilnahmebedingungen, Volltext der Aufsichtsregelung (anwaltlich geprüft), echte Preise der Stundenkarten, Adresse des Bades, Fotos mit Einwilligung, Wahl des Zahlungsdienstleisters.</p>
 </footer>
 
 <script>
@@ -676,37 +936,111 @@ h3{font-size:1.28rem;font-weight:600;letter-spacing:-.01em}
   var kurs=document.getElementById('kurs');
   var aktuell=1;
 
+  var titles=['Wer soll schwimmen lernen?','Gesundheit und Notfall','Wie erreiche ich Sie?','Bedingungen und Einwilligungen','Stundenkarte und Zahlung','Platz gesichert'];
+  var subs=['Fünf Schritte. Der Platz ist mit der Zahlung sofort sicher.',
+            'Pflichtangaben – ohne sie kann ich im Wasser nicht sicher arbeiten.',
+            'Ich melde mich zeitnah persönlich bei Ihnen.',
+            'Drei Häkchen sind Pflicht, zwei sind freiwillig.',
+            'Zahlung ausschließlich online. Der Platz gilt sofort.',
+            'Bitte prüfen Sie Ihr E-Mail-Postfach.'];
+
   function zeige(n){
     aktuell=n;
     steps.forEach(function(s){s.classList.toggle('aktiv', +s.dataset.step===n);});
-    balken.forEach(function(b,i){b.classList.toggle('aktiv', i < Math.min(n,3));});
-    var t=['Wer soll schwimmen lernen?','Wie erreiche ich Sie?','Nur noch die Häkchen','Anfrage eingegangen'];
-    var s=['Drei kurze Schritte. Sie erhalten anschließend eine E-Mail zur Bestätigung.',
-           'Ich melde mich innerhalb von zwei Tagen persönlich zurück.',
-           'Zwei Häkchen sind Pflicht, zwei sind freiwillig.',
-           'Bitte prüfen Sie Ihr E-Mail-Postfach.'];
-    titel.textContent=t[n-1]; sub.textContent=s[n-1];
+    balken.forEach(function(b,i){b.classList.toggle('aktiv', i < Math.min(n,5));});
+    titel.textContent=titles[n-1]; sub.textContent=subs[n-1];
     karte.scrollIntoView({block:'start',behavior:'smooth'});
   }
 
+  var wlHinweis=document.getElementById('wlHinweis');
+  var resBox=document.getElementById('resBox');
+  var restzeit=document.getElementById('restzeit');
+  var schritt5=karte.querySelector('[data-step="5"]');
+  var uhr=null, sekunden=900;
+
+  function wartelisteGewaehlt(){
+    return kurs.options[kurs.selectedIndex].textContent.indexOf('Warteliste')>-1;
+  }
+  function hinweisPruefen(){
+    wlHinweis.classList.toggle('an', wartelisteGewaehlt());
+  }
+  kurs.addEventListener('change',hinweisPruefen);
+  hinweisPruefen();
+
+  function formatiere(s){
+    var m=Math.floor(s/60), r=s%60;
+    return m+':'+(r<10?'0':'')+r;
+  }
+  function uhrStarten(){
+    uhrStoppen();
+    sekunden=900;
+    schritt5.classList.remove('erloschen');
+    resBox.classList.remove('knapp');
+    restzeit.textContent=formatiere(sekunden);
+    uhr=setInterval(function(){
+      sekunden--;
+      restzeit.textContent=formatiere(Math.max(sekunden,0));
+      if(sekunden<=120) resBox.classList.add('knapp');
+      if(sekunden<=0){ uhrStoppen(); schritt5.classList.add('erloschen'); }
+    },1000);
+  }
+  function uhrStoppen(){ if(uhr){clearInterval(uhr); uhr=null;} }
+
+  document.getElementById('neuVersuch').addEventListener('click',function(){ uhrStarten(); });
+
   karte.addEventListener('click',function(e){
-    if(e.target.matches('[data-weiter]')) zeige(Math.min(aktuell+1,3));
-    if(e.target.matches('[data-zurueck]')) zeige(Math.max(aktuell-1,1));
-    if(e.target.id==='absenden'){
-      if(!document.getElementById('agb').checked||!document.getElementById('ds').checked){
-        alert('Bitte bestätigen Sie die Teilnahmebedingungen und die Datenschutzhinweise.');
-        return;
+    if(e.target.matches('[data-weiter]')){
+      if(aktuell===2){
+        if(!document.getElementById('arzt').checked){
+          alert('Bitte bestätigen Sie, dass Ihrem Kind das Schwimmen ärztlich erlaubt ist.');
+          return;
+        }
+        if(!document.getElementById('nktel').value.trim() || !document.getElementById('notfall').value.trim()){
+          alert('Notfallkontakt und Notfallhinweise sind Pflichtangaben.');
+          return;
+        }
       }
-      zeige(4);
+      if(aktuell===4){
+        var pflicht=['agb','aufsicht','ds'];
+        for(var i=0;i<pflicht.length;i++){
+          if(!document.getElementById(pflicht[i]).checked){
+            alert('Teilnahmebedingungen, Aufsichtsregelung und Datenschutz müssen bestätigt werden.');
+            return;
+          }
+        }
+      }
+      if(aktuell===4 && wartelisteGewaehlt()){ wartelisteFertig(); return; }
+      zeige(Math.min(aktuell+1,5));
+      if(aktuell===5) uhrStarten();
     }
+    if(e.target.matches('[data-zurueck]')){ uhrStoppen(); zeige(Math.max(aktuell-1,1)); }
+    if(e.target.id==='absenden'){ uhrStoppen(); zeige(6); }
   });
+
+  function wartelisteFertig(){
+    uhrStoppen();
+    var f=karte.querySelector('[data-step="6"] .fertig');
+    f.querySelector('h3').textContent='Auf der Warteliste';
+    f.querySelector('p').textContent='Ihr Kind steht auf Platz 4 der Warteliste für Bronze, Mi 16:30. Sobald ein Platz frei wird, erhalten Sie einen persönlichen Link mit 48 Stunden Zeit. Bezahlt wird erst dann.';
+    f.querySelector('.mailmock .txt b').textContent='Sie stehen auf der Warteliste';
+    f.querySelector('.mailmock .txt p').textContent='Wir melden uns, sobald ein Platz frei wird. Bis dahin ist nichts zu tun und es wurde nichts abgebucht.';
+    f.querySelector('.anhaenge').innerHTML='<span>Kein Anhang – der Gesundheitsbogen kommt mit der Platzzusage.</span>';
+    f.querySelector('.mitbringen').style.display='none';
+    titel.textContent='Auf der Warteliste';
+    sub.textContent='Es wurde nichts bezahlt.';
+    steps.forEach(function(st){st.classList.toggle('aktiv', +st.dataset.step===6);});
+    balken.forEach(function(b){b.classList.add('aktiv');});
+    karte.scrollIntoView({block:'start',behavior:'smooth'});
+    aktuell=6;
+  }
 
   document.querySelectorAll('.mini[data-kurs]').forEach(function(b){
     b.addEventListener('click',function(){
-      var wunsch=b.dataset.kurs;
+      var wunsch=b.dataset.kurs.split(' \u00b7 ')[0];
       Array.prototype.forEach.call(kurs.options,function(o,i){
-        if(o.textContent.indexOf(wunsch.split(' · ')[0])===0) kurs.selectedIndex=i;
+        if(o.textContent.indexOf(wunsch)===0) kurs.selectedIndex=i;
       });
+      hinweisPruefen();
       zeige(1);
     });
   });
